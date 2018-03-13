@@ -17,7 +17,7 @@ const SearchController = app.controller('SearchController', ['$http', function($
     console.log(searchBar, index);
     $http({
       method: 'GET',
-      url: `${giphyURL}/search?q=${searchBar}&api_key=${apiKey}`
+      url: `/giphy/${searchBar}`
     })
     .then(function(response){
       console.log('success in search', response);
@@ -114,4 +114,4 @@ const RandomController = app.controller('RandomController', ['$http', function($
     })
   }//end searchGiphy
 
-}]);//end SearchController
+}]);//end RandomController

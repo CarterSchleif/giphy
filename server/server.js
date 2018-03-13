@@ -7,6 +7,10 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json()); // NEEDED FOR ANGULARJS
 app.use(express.static('server/public'));
 
+// Get our env properties
+let env = require('dotenv');
+env.config();
+
 const giphyRouter = require('./routers/giphy-router');
 app.use('/giphy', giphyRouter);
 
